@@ -1,8 +1,10 @@
 [package]
 name = "safe-fork"
+description = "A tiny library providing `fork` to safe Rust"
 version = "0.1.0"
 edition = "2021"
 license = "Unlicense"
+repository = "https://github.com/nbdd0121/safe-fork"
 
 [dependencies]
 libc = "0.2"
