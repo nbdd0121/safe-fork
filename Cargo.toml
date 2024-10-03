@@ -1,0 +1,15 @@
+[package]
+name = "safe-fork"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+libc = "0.2"
+
+[[test]]
+name = "single_threaded"
+harness = false
+
+[[test]]
+name = "multi_threaded"
+harness = false
