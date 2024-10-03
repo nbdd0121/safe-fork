@@ -17,6 +17,9 @@ pub fn is_single_threaded() -> bool {
     ensure_single_threaded().is_ok()
 }
 
+/// Representation of a forked child process.
+///
+/// This is a thin wrapper of the raw PID to provide the `join` helper function.
 pub struct Child {
     pid: libc::pid_t,
 }
@@ -27,6 +30,8 @@ impl Child {
         self.pid as _
     }
 
+    /// Waits for the child to exit completely, returning the status that it
+    /// exited with.
     pub fn join(self) -> Result<ExitStatus> {
         // SAFETY: `waitpid` does not have special safety requirements.
         let mut status = 0;
